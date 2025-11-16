@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Revisa mi bot conversional de watson</title>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        margin: 0;
+        padding: 2rem;
+        background: #f7f9fc;
+        color: #0b2545;
+      }
+      header {
+        margin-bottom: 1.5rem;
+      }
+      main {
+        max-width: 720px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1.25rem;
+        box-shadow: 0 6px 18px rgba(11, 37, 69, 0.06);
+      }
+      .note {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        color: #334e68;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Revisa mi bot conversional de watson</h1>
+      <p class="note">Este ejemplo carga el chat de IBM Watson Assistant mediante la integración proporcionada.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Demo del bot</h2>
+        <p>El widget del bot se cargará automáticamente en la página arriba (o en la esquina de la pantalla según la configuración del widget).</p>
+
+        <!-- Código del bot proporcionado -->
+        <script>
+          window.watsonAssistantChatOptions = {
+            integrationID: "4ec855b4-2060-451c-9262-3c92c1b2e1c0", // The ID of this integration.
+            region: "us-south", // The region your integration is hosted in.
+            serviceInstanceID: "fab205cf-5555-4c87-aa34-fa64d0b56985", // The ID of your service instance.
+            onLoad: async (instance) => { await instance.render(); }
+          };
+          setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+          });
+        </script>
+        <!-- Fin del código del bot -->
+
+      </section>
+    </main>
+  </body>
+</html>
